@@ -1,0 +1,22 @@
+status = warn
+name = MyApp
+appender.console.type = Console
+appender.console.name = consoleLogDemo
+appender.console.filter.threshold.type = ThresholdFilter
+appender.console.filter.threshold.level = debug
+appender.console.layout.type = PatternLayout
+appender.console.layout.pattern = %m%n
+appender.console.target = System_out
+
+appender.rolling.type = File
+appender.rolling.name = fileLogDemo
+appender.rolling.filter.threshold.type = ThresholdFilter
+appender.rolling.filter.threshold.level = error
+appender.rolling.layout.type = PatternLayout
+appender.rolling.layout.pattern = %d-%m%n
+appender.rolling.append = true
+appender.rolling.fileName = /Users/shuofeng/Downloads/logs/out.log
+
+rootLogger.level = debug
+rootLogger.appenderRef.consolelogdemo.ref = consoleLogDemo
+rootLogger.appenderRef.filelogdemo.ref = fileLogDemo
